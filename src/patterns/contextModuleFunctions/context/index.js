@@ -1,1 +1,7 @@
-export { useTodoContext, TodoContextProvider, addTodo, deleteTodo, toggleTodo } from './todoContext'
+export {
+  useTodoContext,
+  TodoContextProvider,
+  addTodo,
+  deleteTodo,
+  toggleTodo,
+} from './todoContext';
