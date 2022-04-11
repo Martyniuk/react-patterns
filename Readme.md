@@ -1,10 +1,21 @@
-# React patterns
+<h1 align="center">React patterns</h1>
 
 Short summer up of an [Epic React](https://epicreact.dev/)(thx [Kent C Dodds](https://kentcdodds.com/)) course, my understanding and short description of every pattern
 
 Some of examples are copied.
 
-## 1. Context module functions pattern
+List of patterns:
+
+1. [Context module functions](#context)
+2. [Compound Components](#compound1)
+3. [Compound Components(enhanced)](#compound2)
+4. [Props collection](#collection)
+5. [Props getters](#getters)
+6. [State reducer](#state)
+
+---
+
+<h2 align="center"><a id="context"></a>Context module functions pattern</h2>
 
 Basic idea is keep your state as close to areas of usage as possible and share it with the help of Context (we dont know depth of our branch)
 
@@ -24,8 +35,6 @@ adminC - is a branch where Context about admin is used
 productsC - is a branch where Context about products is used
 
 each Context has its own state
-
---
 
 ### How it is implemented? Tech Details
 
@@ -47,7 +56,7 @@ export { UserContext, UserContextProvider, updateUser }
 
 great advantage of this approach is that each Context module can be treeshaked, so Force of Optimisation is with us (link to Star Wars, hope you understood the joke 😁)
 
-## 2. Compound Components pattern
+<h2 align="center"><a id="compound1"></a>Compound Components pattern</h2>
 
 very inhandy in development of re-usable components (library etc)
 
@@ -75,7 +84,7 @@ You use ParentComponent to store state and you want child components to react on
 </ParentComponent>
 ```
 
-## 3. Compound Components pattern (supporting nesting in components)
+<h2 align="center"><a id="compound2"></a>Compound Components pattern (supporting nesting in components)</h2>
 
 advanced approach of previous pattern, supports scenario when user(developer in our case) may nest Components and still expects some props to be received and used in Child component
 
@@ -104,7 +113,7 @@ parent component is implementing `Context` and is a `Provider` for all the child
 </ParentComponent>
 ```
 
-## 4. Props collection pattern
+<h2 align="center"><a id="collection"></a>Props collection pattern</h2>
 
 One more pattern that is very cool to use in case of development of re-usable components libs.
 
@@ -148,9 +157,9 @@ function PropsCollection() {
 }
 ```
 
-## 5. Props Getters
+<h2 align="center"><a id="getters"></a>Props Getters pattern</h2>
 
-advanced approach of previous pattern, coz there is a chance to overwrite default behaviour of Components, as we seen [here](#👇)
+An advanced approach of previous pattern, coz there is a chance to overwrite default behaviour of Components, as we seen [here](#👇)
 
 Instead of providing basic props object from cusom hook - we provide a function
 
@@ -215,7 +224,7 @@ function callAll(...fns) {
 
 ```
 
-## 6. State Reducer pattern
+<h2 align="center"><a id="state"></a>State Reducer pattern</h2>
 
 One more great candidate for custom components libraries & great example of Inversion of Control pattern
 
